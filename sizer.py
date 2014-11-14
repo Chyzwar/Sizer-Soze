@@ -79,7 +79,7 @@ if __name__ == "__main__":
         ignore = bool(sys.argv[2])
     else:
         ignore = False
-    print col("url", len(url)), col("viewport"), col("image_data"), col("lossless_savings"), col("lossy_savings"), col("resize_savings")
+    #print col("url", len(url)), col("viewport"), col("image_data"), col("lossless_savings"), col("lossy_savings"), col("resize_savings")
     for viewport in settings.viewports:
         result = sizer(url, viewport, ignore, True)
         summary = result['summary']
