@@ -1,21 +1,23 @@
-#!/bin/sh
-filenameInput=$1
+#!/bin/bash
 
-echo "Input Filename " $filenameInput. 
+FILENAME=$1
+count=0
 
+echo "Input Filename " $FILENAME. 
+> "temp.txt"
 
-# while loop will terminate
-cat $filenameInput | while read LINE
+while read LINE
 do
+      let count++
+      echo "$count $LINE"
 
-  # somthing on $line
-  echo $LINE
+      echo $LINE
 
-	./sizer.py $LINE >> "temp.txt"
 
-	echo "----------------------"
+			./sizer.py $LINE >> "temp.txt"
 
-done
+			echo "----------------------"
 
+done < $FILENAME
 
 ./csv-creator.py
