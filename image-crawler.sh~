@@ -1,0 +1,13 @@
+#!/bin/sh
+filenameInput=$1
+filenameOutput=$2
+
+# while loop
+while read line
+do
+  # display line or do somthing on $line
+	echo $line >> $filenameOutput 
+	./sizer $line >> $filenameOutput
+	echo "----------------------";
+
+done <"$filenameInput"
