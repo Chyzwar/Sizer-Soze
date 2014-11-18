@@ -9,14 +9,8 @@ echo "Input Filename " $FILENAME.
 while read LINE
 do
       let count++
-      echo "$count $LINE"
-
-      echo $LINE
-
-
+      echo $count
 			./sizer.py $LINE >> "temp.txt"
-
-			echo "----------------------"
 
 done < $FILENAME
 
